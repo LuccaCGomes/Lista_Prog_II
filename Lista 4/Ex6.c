@@ -6,8 +6,7 @@ int valida_mail(char *s);
 
 int main(void)
 {
-
-    // Recebe o email para verifcação com tamanho máximo de 64 caracteres
+    // Recebe o email para verifcação com tamanho máximo de 64 caracteres:
     printf("Digite um e-mail para ser verificado: \n");
 
     char email[64];
@@ -23,8 +22,6 @@ int main(void)
     printf("\n");
 
     valida_mail(email);
-
-    free(email);
 }
 
 int valida_mail(char *s) {

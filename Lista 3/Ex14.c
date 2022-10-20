@@ -80,4 +80,6 @@ int main(void)
     } else {
         printf("A diferença entre a maior idade que votou Otimo e a maior idade que votou Ruim e de %d!\n", diferencaIdades);
     }
+
+    free(idade);
 }
