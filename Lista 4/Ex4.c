@@ -2,17 +2,21 @@
 #include <stdlib.h>
 
 int testa_PA(int n, int* v);
-int main(void){
+
+int main(void)
+{
     int n=0;
+
     printf("Digite o numero de termos (>=3): ");
     scanf("%d",&n);
+
     if (n<=2)
     {
         do
-    {
-        printf("Digite um numero valido(>=3)");
-        scanf("%d",&n);
-    } while (n<=2);
+        {
+            printf("Digite um numero valido(>=3)");
+            scanf("%d",&n);
+        } while (n<=2);
     }
     
     
@@ -20,14 +24,15 @@ int main(void){
     int *v;
     v = (int *) malloc(n * sizeof(int));
     if(v == NULL) {printf("Nao foi possivel alocar a memoria desejada"); exit(1);}
-    for (int i=0;i<n;i++){
+
+    for (int i=0;i<n;i++) {
         printf("numero da posicao %d no vetor: ",i+1);
         scanf("%d",&v[i]);
     }
     testa_PA(n,v);
-
 }
-int testa_PA(int n, int* v){
+
+int testa_PA(int n, int* v) {
     int k=v[1]-v[0];
     int j=0;
     for (int i=1;i<n;i++){
