@@ -34,7 +34,7 @@ int main(void)
     p2 = vetor[n - 1];
 
     for(int i = 0; i < n / 2; i++) {
-        p1 = vetor[0+i];
+        p1 = vetor[0 + i];
         p2 = vetor[n - 1 - i]; 
 
         printf("P1 = %d    P2 = %d\n", p1, p2);
