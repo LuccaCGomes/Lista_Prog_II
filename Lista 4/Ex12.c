@@ -36,12 +36,12 @@ void removecarac(char *s, char c) {
     int escreve = 0, leitor = 0;
 
     while (s[leitor]) {
-        if (s[leitor]!= c) {   
+        if (s[leitor] != c) {   
             s[escreve] = s[leitor];
             escreve++;
         }
         leitor++;       
     }
 
-    s[escreve]=0;
+    s[escreve] = 0;
 }
