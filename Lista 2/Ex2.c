@@ -11,7 +11,7 @@ int main(void)
         scanf("%d", &qnt);
     } while (qnt < 0);
 
-    for(int i = 1; i <= qnt; i++) {
+    for(int i = 1; i <= qnt*2; i++) {
         if(i % 2 != 0) {
             aux += i;
         }
