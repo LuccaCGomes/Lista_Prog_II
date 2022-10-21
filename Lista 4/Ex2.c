@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void){
+int main(void)
+{
     int R[] = {1,1,2,3,4};
     int S[] = {1,1,3,5,7,4,8,2,9,7};
     int Aux;
@@ -19,5 +20,4 @@ int main(void){
     for(int h = 0; h < 10; h++){
         printf(" %d", X[h]);
     }
-    
 }
