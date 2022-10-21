@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 void removecarac(char *s, char c);
 
 int main(void)
 {
-    printf("digite seu texto: \n");
+    printf("Digite seu texto: ");
     char st[20];
 
     for(int i = 0; i < 19; i++) {
-        st[i] = getche();
+        st[i] = tolower(getche());
 
         if(st[i] == '\r') {
             st[i] = '\0';
@@ -19,13 +20,13 @@ int main(void)
 
     char c;
     printf("\n");
-    printf("qual caracter quer remover?: \n");
-    scanf("%c",&c);
+    printf("Qual caracter quer remover?: ");
+    scanf("%c", &c);
 
     removecarac(st, c);
 
     int k = 0;
-    printf("Frase com caracteres removidos: \n");
+    printf("Frase com caracteres removidos: ");
     while(st[k]) {
         printf("%c", st[k]);
         k++;
