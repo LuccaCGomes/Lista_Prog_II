@@ -1,23 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
-int main(void){
-    int R[] = {1,1,2,3,4};
-    int S[] = {1,1,3,5,7,4,8,2,9,7};
-    int Aux;
-    int X[10];
-    int aux = 0;
-    for(int i = 0; i < 5; i++){
-        for(int j = 0; j < 10; j++){
-            if(R[i] == S[j]){
-                
-                X[aux] = R[i];
-                aux++;              
-            }
-        }
+int main(void)
+{
+    char R[5];
+    char S[12];
+
+    printf("Digite os elementos do vetor R: ");
+    for (int i = 0; i < 5; i++) {
+        R[i] = getche();
     }
-    for(int h = 0; h < 10; h++){
-        printf(" %d", X[h]);
+    printf("\n");
+
+    printf("Digite os elementos do vetor S: ");
+    for (int i = 0; i < 10; i++) {
+        S[i] = getche();
     }
-    
+    S[11] = '\0';
+    printf("\n");
+
+    printf("Vetor R = { ");
+    for (int i = 0; i < strlen(R) - 1; i++) {
+        printf("%c ", R[i]);
+    }
+    printf("}\n");
+
+    printf("Vetor S = { ");
+    for (int i = 0; i < strlen(S) - 1; i++) {
+        printf("%c ", S[i]);
+    }
+    printf("}\n");
 }
