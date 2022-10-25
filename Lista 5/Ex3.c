@@ -19,15 +19,15 @@ int main(void)
 
     int incidencia = analisaOcorrencia(letra, frase);
 
-    printf("O caracter %c aparece %d vezes na string!\n", letra, incidencia);
+    printf("O caracter '%c' aparece %d vezes na string!\n", letra, incidencia);
 
     return 0;
 }
 
 int analisaOcorrencia(char c, char *vet) {
-    int contador;
+    int contador = 0;
     
-    for(int i = 0; strlen(vet); i++) {
+    for(int i = 0; i < strlen(vet); i++) {
         vet[i] = tolower(vet[i]);
 
         if(vet[i] == c) {
