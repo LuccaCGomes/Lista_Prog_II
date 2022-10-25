@@ -39,4 +39,6 @@ int main(void)
 
         printf("P1 = %d    P2 = %d\n", p1, p2);
     }
+    
+    free(vetor);
 }
