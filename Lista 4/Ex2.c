@@ -16,7 +16,7 @@ int main(void)
 
     printf("\nDigite os valores de R: ");
     for(int i = 0; i < 5; i++) {
-        if(i == 10) {
+        if(i == 5) {
             r[i] = '\0';
         }
         r[i] = getche();
