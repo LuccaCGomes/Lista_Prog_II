@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <ctype.h>
+#include <string.h>
 
 int analisaOcorrencia(char c, char *vet);
 

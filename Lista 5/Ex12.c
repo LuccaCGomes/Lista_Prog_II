@@ -3,6 +3,8 @@
 #include <conio.h>
 #include <string.h>
 
+// O exercício é igual ao 13 da lista 4! Então só copiei e colei kkkkkk
+
 int main(void)
 {   
     // Comentei as partes chave do exercício para mostrar que fiz eu mesmo com meu grupo e evitar uma possível acusação de plágio, já que enviei a solução no grupo para comparar com a solução de outros colegas, e não sei se alguém irá copiá-la.
