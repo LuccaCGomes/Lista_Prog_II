@@ -1,34 +1,50 @@
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 
 int main(void)
 {
-    char R[5];
-    char S[12];
+    char s[10], r[5], x[5] = "";
 
-    printf("Digite os elementos do vetor R: ");
-    for (int i = 0; i < 5; i++) {
-        R[i] = getche();
+    printf("Digite os valores de S: ");
+    for(int i = 0; i < 10; i++) {
+        if(i == 10) {
+            s[i] = '\0';
+        }
+        s[i] = getche();
     }
-    printf("\n");
 
-    printf("Digite os elementos do vetor S: ");
-    for (int i = 0; i < 10; i++) {
-        S[i] = getche();
+    printf("\nDigite os valores de R: ");
+    for(int i = 0; i < 5; i++) {
+        if(i == 10) {
+            r[i] = '\0';
+        }
+        r[i] = getche();
     }
-    S[11] = '\0';
-    printf("\n");
 
-    printf("Vetor R = { ");
-    for (int i = 0; i < strlen(R) - 1; i++) {
-        printf("%c ", R[i]);
-    }
-    printf("}\n");
+    int c = 0, z = 0;
 
-    printf("Vetor S = { ");
-    for (int i = 0; i < strlen(S) - 1; i++) {
-        printf("%c ", S[i]);
+    while(z < 5) {
+        for(int j = 0; j < 5; j++) {
+            if(r[z] == x[j]){
+                z++;
+            }
+        } 
+        
+        for (int i = 0; i < 10; i++) {
+            if(r[z] == s[i]){
+                x[c] = r[z];
+                c++;
+                break;
+            }
+        }
+
+        z++;
     }
-    printf("}\n");
+    
+    printf("\nX = { ");
+    for(int j = 0; j < 5; j++) {
+        printf("%c ", x[j]);
+    }
+    printf("}");
 }
