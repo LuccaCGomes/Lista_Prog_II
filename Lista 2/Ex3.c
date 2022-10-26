@@ -19,4 +19,5 @@ int main(void)
         aux1 = aux2;
         aux2 = aux3;
     }
+    return 0;
 }
