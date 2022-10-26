@@ -52,4 +52,6 @@ int main(void)
     float aux = somatorio / qnt;
 
     printf("Existem %d mulheres entre 20 e 35 anos e %d homens com mais de 1,80 de altura! A variancia da altura e de %.2f!\n", cont1, cont2, aux);
+
+    free(vetorAltura);
 }
