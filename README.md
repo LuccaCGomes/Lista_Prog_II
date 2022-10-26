@@ -1,1 +1,1 @@
-Resolução das listas de Programação II, da Universidade Federal Fluminense.
+Resolução das listas exercícios de Programação II, da Universidade Federal Fluminense.
