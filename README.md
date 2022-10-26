@@ -1,2 +1,1 @@
-# Lista_Prog_II
-Resolução das listas de Programação II.
+Resolução das listas de Programação II, da Universidade Federal Fluminense.
