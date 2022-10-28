@@ -11,7 +11,7 @@ int main(void)
 {
     srand(time(NULL));
 
-    int qnt, *inscricoes, peso1, peso2, *tam, *participantesPremiados;
+    int qnt, *inscricoes, peso1, peso2, tam, *participantesPremiados;
     float *nota1, *nota2;
 
 // Pega o número de participantes e inicia os vetores com números aleatórios.
@@ -76,7 +76,6 @@ int main(void)
         printf("%d ", participantesPremiados[i]);
     } 
     printf("}\n");
-    // Por alguma razão, nesse for, ao colocar "i < tam" a função buga e imprime muito mais do que deveria, mas ao colocar strlen(participantesPremiados) ela funciona perfeitamente. O engraçado é que a variável tam está recebendo o valor correto, sem erros, do tamanho que deveria ser. Acredito que possa ser algum erro do meu compilador.
 
     free(participantesPremiados);
 }
