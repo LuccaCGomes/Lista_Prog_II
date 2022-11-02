@@ -3,12 +3,12 @@
 #include <conio.h>
 #include <time.h>
 
-void repeticao(int *vet, int tam);
+int repeticao(int *vet, int tam, int *n);
 
 int main(void) 
 {
     srand(time(NULL));
-    int n;
+    int n, cont = 0, *resposta;
 
     printf("Qual o tamanho do vetor? ");
     scanf("%d", &n);
@@ -21,11 +21,18 @@ int main(void)
         vetor[i] = rand() % (9 + 1 - 0) + 0;
     }
 
-    repeticao(vetor, n);
+    resposta = repeticao(vetor, n, &cont);
+
+    printf("Numeros repetidos = { ");
+    for(int i = 0; i < n; i++) {
+        printf("%d ", resposta[i]);
+    }
+    printf("}");
+
 }
 
-void repeticao(int *vet, int tam) {
-    printf("{ ");
+int repeticao(int *vet, int tam, int *n) {
+    printf("{");
     for(int i = 0; i < tam; i++){
 
         printf("%d ", vet[i]);
@@ -33,8 +40,11 @@ void repeticao(int *vet, int tam) {
     }
     printf("}\n");
 
-    int aux = 0;
-    printf("Numeros repetidos = { ");
+    int aux = 0, *retorno;
+
+    retorno = (int *) malloc(tam * sizeof(int));
+    if(retorno == NULL) { printf("Nao foi possivel alocar a memoria desejada.\n"); exit(1); }
+
     for (int i = 0; i < tam; i++){
         int soma = 0;
 
@@ -42,7 +52,8 @@ void repeticao(int *vet, int tam) {
             if (vet[i] == vet[k] && vet[k] >= 0){
                 soma++;
                 if (soma >= 2){
-                    printf("%d ", vet[i]);
+                    retorno[i] = vet[i];
+                    (*n)++;
                     for (int l = i + 1; l < tam; l++){
                         if (vet[i] == vet[l])
                         vet[l] =- 10;
@@ -53,5 +64,6 @@ void repeticao(int *vet, int tam) {
             }
         }
     }
-    printf("}");
+
+    return retorno;
 }

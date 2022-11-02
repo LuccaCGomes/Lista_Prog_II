@@ -19,7 +19,7 @@ int main(void)
         vetor[i] = rand() % (9 + 1 - 0) + 0;
     }
 
-    printf("{");
+    printf("{ ");
     for(int i = 0; i < n; i++){
 
         printf("%d ", vetor[i]);
