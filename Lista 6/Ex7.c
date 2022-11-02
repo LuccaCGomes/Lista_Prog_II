@@ -22,6 +22,7 @@ int main(void)
     }
 
     repeticao(vetor, n);
+    free(vetor);
 }
 
 void repeticao(int *vet, int tam) {

@@ -48,4 +48,5 @@ int main(void)
         }
     }
     printf("}");
+    free(vetor);
 }

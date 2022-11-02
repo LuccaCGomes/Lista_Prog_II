@@ -38,4 +38,5 @@ char* cifra_cesar(char* msg) {
     }
 
     return aux;
+    free(aux);
 }

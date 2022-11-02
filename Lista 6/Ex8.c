@@ -60,7 +60,9 @@ int main(void)
         printf("%d ", resultado[i]);
     }
     printf("}");
-    
+    free(vetor);
+    free(aux);
+    free(resultado);
 }
 
 int *repeticao(int *vet, int tam, int *n) {
