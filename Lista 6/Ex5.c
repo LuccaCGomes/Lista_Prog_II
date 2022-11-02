@@ -9,7 +9,7 @@ int main(void){
     char frase[1001];
     for (int i=0;i<1001;i++){
         
-        frase[i]=getche();
+        frase[i]=getch();
         if (frase[i]=='\r'){
             frase[i]='\0';
             break;
@@ -18,8 +18,10 @@ int main(void){
     }
     char *aux;
     aux=cifra_cesar(frase);
-    printf("%s",frase);
-    printf("\n%s",aux);
+    printf("frase original: \n");
+    printf("%s\n",frase);
+    printf("frase cifrada: \n");
+    printf("%s",aux);
     
     
 
