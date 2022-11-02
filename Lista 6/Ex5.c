@@ -8,15 +8,7 @@ char* cifra_cesar(char* msg);
 int main(void)
 {
     char frase[1001];
-    for(int i = 0; i < 1001; i++) {
-        
-        frase[i] = getch();
-        if(frase[i] == '\r') {
-            frase[i] = '\0';
-            break;
-        }
-
-    }
+    gets(frase);
 
     char *aux;
     aux = cifra_cesar(frase);
@@ -36,15 +28,11 @@ char* cifra_cesar(char* msg) {
     for(int i = 0; i < n + 1; i++){
         if(msg[i] >= 'a' && msg[i] <= 'w' || msg[i] >= 'A' && msg[i] <= 'W') {
             aux[i]=msg[i]+3;
-        }
-        else if(msg[i] == 'x' || msg[i] == 'y' || msg[i] == 'z'|| msg[i] == 'X' || msg[i] == 'Y' || msg[i] == 'Z') {
+        } else if(msg[i] == 'x' || msg[i] == 'y' || msg[i] == 'z'|| msg[i] == 'X' || msg[i] == 'Y' || msg[i] == 'Z') {
             aux[i]=msg[i]-23;
-        }
-        else if(msg[i] == '\0'){
+        } else if(msg[i] == '\0') {
             aux[i] = '\0';
-        }
-        else
-        {
+        } else {
             aux[i] = msg[i];
         }
     }
