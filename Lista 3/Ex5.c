@@ -35,7 +35,7 @@ int main(void)
 
 float max_vet(int n, float *vet) {
     float aux = vet[0];
-    for(int i = 1; i <= n; i++) {
+    for(int i = 1; i < n; i++) {
         if(vet[i] > aux) {
             aux = vet[i];
         }

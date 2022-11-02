@@ -4,6 +4,7 @@
 int main(void)
 {
     float qnt, otimo = 0, bom = 0, regular = 0, ruim = 0, pessimo = 0, idadeRuim = 0, somaIdade = 0, idadePessimo = 0, idadeOtimo = 0, idadeRuim2 = 0;
+    
     do {
         printf("Quantas pessoas foram no cinema? ");
         scanf("%f", &qnt);
