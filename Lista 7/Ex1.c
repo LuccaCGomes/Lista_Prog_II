@@ -30,7 +30,7 @@ int main (void)
     f3 = 3
     main = 3
 
-    pois em f1, v recebera o valor dele mesmo + 1, ou seja, 2, mas não alterando o valor na função main
+    pois em f1, v recebera o valor dele mesmo + 1, ou seja, 2, mas não alterando o valor na função main.
     em f2, acontecerá o mesmo, porém, através de ponteiros, então receberá 2 e irá alterar o valor na função main
     depois, v receberá a função f3, onde v recebe ele mesmo (2) + 1, sendo 3 e, apesar de não ser ponteiro, a função tem return, então o valor se altera na main
     no final, main ira printar v, que no momento é 3, por ter sido alterado por último em f3
