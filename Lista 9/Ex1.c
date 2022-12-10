@@ -26,6 +26,7 @@ Notas nt; /* notas de prova */
 } Candidato;
 
 int main(void){
+    
     int n;
     printf ("Quantos candidatos deseja armazenar? \n");
     scanf("%d",&n);
@@ -39,8 +40,12 @@ int main(void){
 void inicializa (int n, Candidato** tab)
 {
 int i;
-for (i=0; i<100; i++)
+Local local1;
+for (i=0; i<100; i++){
 tab[i] = NULL;
+
+}
+
 }
 
 void preenche (int n, Candidato** tab, int i)
@@ -51,6 +56,7 @@ exit(1); /* aborta o programa */
 }
 if (tab[i]==NULL)
 tab[i] = (Candidato*)malloc(sizeof(Candidato));
+
 printf("Entre com a matricula: \n");
 scanf("%d", &tab[i]->inscr);
 printf("Entre com o Nome: \n");
@@ -63,9 +69,9 @@ scanf("%d", &tab[i]->nasc.mes);
 printf("\nAno: ");
 scanf("%d", &tab[i]->nasc.ano);
 printf("\nEntre com o local de prova: ");
-scanf("%s\r", &tab[i]->loc->ender);
+scanf("%s", &tab[i]->loc->ender);
 printf("\nNumero da sala: ");
-scanf("%d\r", &tab[i]->loc->sala);
+scanf("%d", &tab[i]->loc->sala);
 printf("\nEntre com a nota da prova de conhecimentos gerais: ");
 scanf("%f", &tab[i]->nt.geral);
 printf("\nNota da prova de conhecimentos específicos: ");
