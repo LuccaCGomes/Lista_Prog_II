@@ -16,7 +16,7 @@ int main(void)
 char *declaraVetor() {
     char vet[27], letra = 'a';
     
-    for(int i = 0; i < 26; i++) {
+    for(int i = 0; i < 27; i++) {
         vet[i] = letra;
         letra++;
     }
@@ -28,7 +28,7 @@ char *declaraVetor() {
 
 char imprimeVetor(char *vet) {
     printf("Vetor = { ");
-    for(int i = 0; i < 26; i++) {
+    for(int i = 0; i < 27; i++) {
         printf("%c", vet[i]);
     }
     printf(" }");
