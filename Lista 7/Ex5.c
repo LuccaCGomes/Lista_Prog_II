@@ -16,6 +16,7 @@ int main(void)
         if(vetor[i] == '\r') {
             vetor[i] = '\0';
             break;
+            
         }
 
         while(isalpha(vetor[i]) == 0 && vetor[i] != ' ') {
