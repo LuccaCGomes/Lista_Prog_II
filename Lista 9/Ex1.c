@@ -41,8 +41,12 @@ int main(void)
 
 void inicializa (int n, Candidato** tab) {
 int i;
-for (i=0; i<100; i++)
+Local local1;
+for (i=0; i<100; i++){
 tab[i] = NULL;
+
+}
+
 }
 
 void preenche (int n, Candidato** tab, int i) {
