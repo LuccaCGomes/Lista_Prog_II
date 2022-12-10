@@ -1,65 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#include <conio.h>
+#include <string.h>
 
-int transpo(int mat[4][4]);
-int simetri(int mat1[4][4], int mat2[4][4]);
+int main(void) 
+{
+    printf("Digite quantos nomes quiser, ate digitar 'fim'.\n");
+    char lista[100][100];
+    int i;
+    float somatorio = 0,  media = 0;
 
-int main(void){
-    srand(time(NULL));
-    int matorig[4][4];
-    int mattranspo[4][4];
-
-    for (int i = 0; i < 4; i++){
-        for (int j = 0; j < 4; j++){
-            matorig[i][j] = rand() % (9 + 1 - 1) + 1;
-        }
-    }
-    printf("Matriz original: \n");
-    for(int i = 0; i < 4; i++) {
-        for(int j = 0; j < 4; j++) {
-            printf("%d ", matorig[i][j]);
-        }
-        printf("\n");
-        
-    }
-    transpo(matorig);
-
-}
-int transpo(int mat[4][4]){
-    int mattransp[4][4];
-    int resp;
-    for (int i = 0; i < 4; i++){
-        for (int j = 0; j < 4; j++){
-            mattransp[j][i]=mat[i][j];
-
-        }
-    }
-    printf("Matriz transposta: \n");
-    for(int i = 0; i < 4; i++) {
-        for(int j = 0; j < 4; j++) {
-            printf("%d ", mattransp[i][j]);
-        }
-        printf("\n");
-    }
-    resp = simetri(mat, mattransp);
-    if(resp == 1){
-        printf("\n Matriz nao simetrica");
-    }
-    else {
-        printf(" Matriz Simetrica ");
-    }
-    
-
-}
-int simetri(int mat1[4][4], int mat2[4][4]){
-    for (int i = 0; i < 4; i++){
-        for (int j = 0; j < 4; j++){
-            if(mat1[i][j] != mat2[i][j]){
-                return 1;
+    for(i = 0; i < 100; i++) {
+        gets(lista[i]);
+        if(strlen(lista[i]) == 3) {
+            if(lista[i][0] == 'f' && lista[i][1] == 'i' && lista[i][2] == 'm') {
+                break;
             }
-
         }
+        media += strlen(lista[i]);
     }
-    return 0;
+    media /= i;
+
+    for(int c = 0; c < i; c++) {
+        somatorio += pow((strlen(lista[c]) - media), 2);
+    }
+
+    somatorio /= i;
+
+    printf("Media do tamanho dos nomes e %.2f e a variancia e de %.2f", media, somatorio);
 }
+
