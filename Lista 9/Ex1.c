@@ -29,11 +29,13 @@ int main(void){
     int n;
     printf ("Quantos candidatos deseja armazenar? \n");
     scanf("%d",&n);
-    Candidato* tab[100];
+    Candidato tab[100];
     inicializa(n,tab);
     for(int j = 0; j < n; j++){
         preenche(n,tab,j);
+       
     }
+    return 0;
 }
 
 void inicializa (int n, Candidato** tab)
