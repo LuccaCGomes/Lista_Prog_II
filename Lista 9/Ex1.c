@@ -13,7 +13,7 @@ typedef struct local {
 typedef struct notas {
     float geral; /* prova de conhecimentos gerais */
     float especifica; /* prova de conhecimentos
-    especificos */
+    especificoos */
 } Notas;
 
 typedef struct candidato {
