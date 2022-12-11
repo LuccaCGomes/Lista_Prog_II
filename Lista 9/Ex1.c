@@ -24,8 +24,10 @@ typedef struct candidato {
     Notas nt; /* notas de prova */
 } Candidato;
 
-void inicializa (int n, Candidato** tab);
-void preenche (int n, Candidato** tab, int i);
+void inicializa(int n, Candidato **tab);
+void preenche(int n, Candidato **tab, int i);
+int opcoes(int num, Candidato **tab);
+void alteraEnd(int num, Candidato **tab);
 
 int main(void) 
 {
@@ -37,10 +39,11 @@ int main(void)
     for(int j = 0; j < n; j++){
         preenche(n, tab, j);
     }
-    return 0;
+
+    opcoes(n, tab);
 }
 
-void inicializa (int n, Candidato** tab) {
+void inicializa (int n, Candidato **tab) {
     int i;
     for (i = 0; i < 100; i++){
         tab[i] = NULL;
@@ -48,12 +51,13 @@ void inicializa (int n, Candidato** tab) {
 }
 
 void preenche (int n, Candidato **tab, int i) {
-    if (i<0 || i>=n) {
-        printf("Indice fora do limite do vetor\n");
+    if (i < 0 || i >= n) {
+        printf("Indice fora do limite do vetor!\n");
         exit(1); /* aborta o programa */
     }
+
     Local locais[100];
-    if (tab[i]==NULL){
+    if (tab[i] == NULL){
         tab[i] = (Candidato*)malloc(sizeof(Candidato));
 
         tab[i]->loc=&locais[i];
@@ -80,3 +84,55 @@ void preenche (int n, Candidato **tab, int i) {
     scanf("%f", &tab[i]->nt.especifica);
 }
 
+int opcoes(int num, Candidato **tab) {
+    int op;
+    printf("O que deseja fazer agora? (1 para leitura dos dados e 2 para imprimir todas as informacoes e 3 continuar e 4 para encerrar o programa): ");
+    scanf("%d", &op);
+
+    if(op == 1) {
+        int j;
+        printf("Deseja ler os dados de qual candidato? ");
+        scanf("%d", &j);
+        printf("\nInscricao = %d | Nome = %s | Data de Nascimento = %d/%d/%d | Local de Prova: Endereco = %s, Sala = %d | Nota 1 = %.2f e Nota 2 = %.2f\n", tab[j-1]->inscr, tab[j-1]->nome, tab[j-1]->nasc.dia, tab[j-1]->nasc.mes, tab[j-1]->nasc.ano, tab[j-1]->loc->ender, tab[j-1]->loc->sala, tab[j-1]->nt.geral, tab[j-1]->nt.especifica);
+
+        opcoes(num, tab);
+    } else if(op == 2) {
+        for(int i = 0; i < num; i++) {
+            printf("Candidato %d:\n", i+1);
+            printf("Inscricao = %d | Nome = %s | Data de Nascimento = %d/%d/%d | Local de Prova: Endereco = %s, Sala = %d | Nota 1 = %.2f e Nota 2 = %.2f\n", tab[i]->inscr, tab[i]->nome, tab[i]->nasc.dia, tab[i]->nasc.mes, tab[i]->nasc.ano, tab[i]->loc->ender, tab[i]->loc->sala, tab[i]->nt.geral, tab[i]->nt.especifica);
+        }
+        opcoes(num, tab);
+    } else if(op == 3) {
+        alteraEnd(num, tab);
+    } else if(op == 4) {
+        return 0;
+    } else {
+        printf("Opcao invalida! Tente novamente.\n");
+        opcoes(num, tab);
+    }
+}
+
+void alteraEnd(int num, Candidato **tab) {
+    int op;
+    printf("Deseja alterar o endereco e a sala do local de provas? (1 para sim e 2 para nao): ");
+    scanf("%d", &op);
+
+    if(op == 1) {
+        int j = 0;
+        printf("Qual candidato deseja alterar? ");
+        scanf("%d", &j);
+
+        printf("Digite o novo endereco: ");
+        *tab[j-1]->loc->ender = NULL;
+        scanf("%s", &tab[j-1]->loc->ender);
+
+        int novaSala = 0;
+        printf("Digite a nova sala: ");
+        scanf("%d", &novaSala);
+        tab[j-1]->loc->sala = NULL; 
+        tab[j-1]->loc->sala = novaSala;
+    } else if(op == 2) {
+        opcoes(num, tab);
+    }
+    opcoes(num, tab);
+}
