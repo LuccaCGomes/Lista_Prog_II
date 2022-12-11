@@ -28,13 +28,34 @@ int main(void)
 }
 
 Assalariados *cadastra(char *nome, char sexo, int idade, float salario, char *estado) {
-    Assalariados vetAux[1];
+    Assalariados *vetAux;
+    vetAux = (Assalariados *) malloc(sizeof(Assalariados));
 
-    vetAux->nome[0] = nome;
+    *vetAux->nome = *nome;
     vetAux->sexo = sexo;
     vetAux->idade = idade;
     vetAux->salario = salario;
-    vetAux->estado[0] = estado;
+    *vetAux->estado = *estado;
 
     return vetAux;
+}
+
+void imprime(Assalariados **ptr, int numAssalariados) {
+    for(int i = 0; i < numAssalariados; i++) {
+        printf("Assalariado %d\n:", i);
+        printf("Nome: %s | Sexo: %c | Idade: %d | Salario: %.4f | Estado: %s", ptr[i]->nome, ptr[i]->sexo, ptr[i]->idade, ptr[i]->salario, ptr[i]->estado);
+    }
+}
+
+void relatorio(Assalariados **ptr, int numAssalariados) {
+    int cont = 0, k = 0;
+    char est[27];
+    for(int i = 0; i < numAssalariados; i++) {
+        if(ptr[i]->idade >= 40 && ptr[i]->salario >= 1000) {
+            cont++;
+            est[k] = ptr[i]->estado; 
+            k++;
+        }
+    }
+    printf("\nEstado = %s com %d homens maiores de 40 anos e salario maior que R$1000,00\n", est,cont);
 }
