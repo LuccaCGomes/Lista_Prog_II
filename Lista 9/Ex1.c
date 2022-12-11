@@ -53,6 +53,11 @@ void preenche (int n, Candidato **tab, int i) {
         printf("Indice fora do limite do vetor\n");
         exit(1); /* aborta o programa */
     }
+    Local locais[100];
+    if (tab[i]==NULL){
+        tab[i] = (Candidato*)malloc(sizeof(Candidato));
+        tab[i]->loc=&locais[i];
+    }
     if (tab[i]==NULL) {
         tab[i] = (Candidato *) malloc(sizeof(Candidato));
         printf("Entre com a matricula: \n");
