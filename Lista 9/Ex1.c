@@ -42,7 +42,6 @@ int main(void)
 
 void inicializa (int n, Candidato** tab) {
     int i;
-    Local local1;
     for (i = 0; i < 100; i++){
         tab[i] = NULL;
     }
@@ -56,29 +55,28 @@ void preenche (int n, Candidato **tab, int i) {
     Local locais[100];
     if (tab[i]==NULL){
         tab[i] = (Candidato*)malloc(sizeof(Candidato));
+
         tab[i]->loc=&locais[i];
     }
-    if (tab[i]==NULL) {
-        tab[i] = (Candidato *) malloc(sizeof(Candidato));
-        printf("Entre com a matricula: \n");
-        scanf("%d", &tab[i]->inscr);
-        printf("Entre com o Nome: \n");
-        scanf("%s", &tab[i]->nome);
-        printf("Entre com a data de nascimento: \n");
-        printf("Dia: ");
-        scanf("%d", &tab[i]->nasc.dia);
-        printf("\nMes: ");
-        scanf("%d", &tab[i]->nasc.mes);
-        printf("\nAno: ");
-        scanf("%d", &tab[i]->nasc.ano);
-        printf("\nEntre com o local de prova: ");
-        scanf("%s\r", &tab[i]->loc->ender);
-        printf("\nNumero da sala: ");
-        scanf("%d\r", &tab[i]->loc->sala);
-        printf("\nEntre com a nota da prova de conhecimentos gerais: ");
-        scanf("%f", &tab[i]->nt.geral);
-        printf("\nNota da prova de conhecimentos específicos: ");
-        scanf("%f", &tab[i]->nt.especifica);
-    }
+
+    printf("Entre com a matricula: \n");
+    scanf("%d", &tab[i]->inscr);
+    printf("Entre com o Nome: \n");
+    scanf("%s", &tab[i]->nome);
+    printf("Entre com a data de nascimento: \n");
+    printf("Dia: ");
+    scanf("%d", &tab[i]->nasc.dia);
+    printf("\nMes: ");
+    scanf("%d", &tab[i]->nasc.mes);
+    printf("\nAno: ");
+    scanf("%d", &tab[i]->nasc.ano);
+    printf("\nEntre com o local de prova: ");
+    scanf("%s", &tab[i]->loc->ender);
+    printf("\nNumero da sala: ");
+    scanf("%d", &tab[i]->loc->sala);
+    printf("\nEntre com a nota da prova de conhecimentos gerais: ");
+    scanf("%f", &tab[i]->nt.geral);
+    printf("\nNota da prova de conhecimentos especificos: ");
+    scanf("%f", &tab[i]->nt.especifica);
 }
 
