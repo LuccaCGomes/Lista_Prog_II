@@ -40,7 +40,7 @@ int main(void){
 void inicializa (int n, Candidato** tab)
 {
 int i;
-Local local1;
+
 for (i=0; i<100; i++){
 tab[i] = NULL;
 
@@ -54,8 +54,12 @@ if (i<0 || i>=n) {
 printf("Indice fora do limite do vetor\n");
 exit(1); /* aborta o programa */
 }
-if (tab[i]==NULL)
+Local locais[100];
+if (tab[i]==NULL){
 tab[i] = (Candidato*)malloc(sizeof(Candidato));
+
+tab[i]->loc=&locais[i];
+}
 
 printf("Entre com a matricula: \n");
 scanf("%d", &tab[i]->inscr);
@@ -74,7 +78,7 @@ printf("\nNumero da sala: ");
 scanf("%d", &tab[i]->loc->sala);
 printf("\nEntre com a nota da prova de conhecimentos gerais: ");
 scanf("%f", &tab[i]->nt.geral);
-printf("\nNota da prova de conhecimentos específicos: ");
+printf("\nNota da prova de conhecimentos especificos: ");
 scanf("%f", &tab[i]->nt.especifica);
 
 
