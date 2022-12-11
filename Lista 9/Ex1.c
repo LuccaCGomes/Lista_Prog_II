@@ -59,6 +59,7 @@ void preenche (int n, Candidato **tab, int i) {
     Local locais[100];
     if (tab[i] == NULL){
         tab[i] = (Candidato*)malloc(sizeof(Candidato));
+
         tab[i]->loc=&locais[i];
     }
 
