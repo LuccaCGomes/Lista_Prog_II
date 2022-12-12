@@ -8,39 +8,41 @@ struct funcionario {
 };
 typedef struct funcionario Funcionario;
 
-FILE *fp;
-
 void carrega(int n, Funcionario **vet, char *arquivo);
 
 int main(void)
 {
+    int n = 3;
+    char *arquivo = "Ex1texto.txt";
+
     Funcionario **registro;
     registro = (Funcionario **) malloc(sizeof(Funcionario *));
 
-    fp = fopen("Ex1texto.txt", "r");
-    if (fp == NULL) {
-        printf("Erro na abertura do arquivo.\n");
-        exit(1);
+    for(int i = 0; i < n; i++) {
+        registro[i] = NULL;
     }
 
-    carrega(3, registro, fp);
+    carrega(n, registro, arquivo);
 }
 
 void carrega(int n, Funcionario **vet, char *arquivo) {
-    for(int i = 0; i < n; i++) {
-        char name[81];
-        fscanf(arquivo, "%s", &name);
-        strcpy(*vet[i]->nome, name);
+    FILE *fp;
 
-        float valHor = 0;
-        int qntHor = 0;
-        fscanf(arquivo, "%f %d", &valHor, &qntHor);
-        vet[i]->valor_hora = valHor;
-        vet[i]->horas_mes = qntHor;
+    fp = fopen(arquivo, "r");
+    if(fp == NULL) { printf("ERRO"); exit(1); }
+
+    for(int i = 0; i < n; i++) {
+        vet[i] = (Funcionario *) malloc(sizeof(Funcionario));
+        fscanf(fp, "%81[^\n]", &vet[i]->nome);
+        fscanf(fp, "%f", &vet[i]->valor_hora);
+        fscanf(fp, "%d", &vet[i]->horas_mes);
+        fgetc(fp);
     }
 
+    fclose(fp);
+
     for(int i = 0; i < n; i++) {
-        printf("Funcionaro %d", i+1);
-        printf("Nome: %s | Valor Hora: %.2f | Horas Mes: %d", vet[i]->nome, vet[i]->valor_hora, vet[i]->horas_mes);
+        printf("Funcionaro %d:\n", i+1);
+        printf("Nome: %s | Valor Hora: %.2f | Horas Mes: %d\n", vet[i]->nome, vet[i]->valor_hora, vet[i]->horas_mes);
     }
 }
